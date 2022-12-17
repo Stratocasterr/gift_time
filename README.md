@@ -1,7 +1,7 @@
 # Gift time 
 Welcome in christmas messenger web application!
 
-![image](https://user-images.githubusercontent.com/101999487/208204711-085b31f6-a5f7-4eff-998d-a59f02bba6e4.png)
+<img src = "https://user-images.githubusercontent.com/101999487/208204711-085b31f6-a5f7-4eff-998d-a59f02bba6e4.png" width="200" height ="900"  />
 
 ### What is it?
 This is a project of message system web application, realized to help santa claus with his christmas duties.
