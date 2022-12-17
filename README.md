@@ -9,7 +9,7 @@ This is a project of message system web application, realized to help santa clau
 ### What can you do here?
 Join us to feel this christmas day atmosphere! Just create account, by choosing password, username and account type. Text with another users, choose your dream christmas present or help santa with delivering gifts to children.
 
-<img src = "https://user-images.githubusercontent.com/101999487/208207691-6b205b7d-1fe1-4c17-afba-31f9635f14f7.png) " width="600" height ="900" />
+<img src = "https://user-images.githubusercontent.com/101999487/208207691-6b205b7d-1fe1-4c17-afba-31f9635f14f7.png" width="900" height ="500" />
 
 ### Account types
 
