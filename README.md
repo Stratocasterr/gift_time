@@ -9,14 +9,14 @@ This is a project of message system web application, realized to help santa clau
 ### What can you do here?
 Join us to feel this christmas day atmosphere! Just create account, by choosing password, username and account type. Text with another users, choose your dream christmas present or help santa with delivering gifts to children.
 
-<img src = "https://user-images.githubusercontent.com/101999487/208207691-6b205b7d-1fe1-4c17-afba-31f9635f14f7.png" width="900" height ="500" />
+<img src = "https://user-images.githubusercontent.com/101999487/208207691-6b205b7d-1fe1-4c17-afba-31f9635f14f7.png" />
 
 ### Account types
 
 In my system, there are three different account types to choose from:
 
 #### Child
-![image](https://user-images.githubusercontent.com/101999487/208208379-3e8009ef-98ee-47d9-81b6-48c3b5daa334.png)
+<img src = "https://user-images.githubusercontent.com/101999487/208208379-3e8009ef-98ee-47d9-81b6-48c3b5daa334.png" width="900" height ="500" />
 
 Child can write messages to Santa to ask about dream gift and receive messages from santa and notifications about his/her gift delivery status.
 
