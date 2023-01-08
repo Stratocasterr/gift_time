@@ -1,0 +1,43 @@
+#composers
+{
+    display: flex;
+}
+
+#compose-mess-button,#compose-present-button
+{
+    position: relative;
+}
+
+img.compose 
+{
+    width: 15vh;
+    height: 15vh;
+}
+
+h.compose 
+{
+    position: absolute;
+    top: 15vh;
+    left:1.5vw;
+}
+
+/* message composer */
+#message-composer-container
+{
+    background-color: #04101f;
+    border: 1px solid white;
+    border-radius: 20px;
+    position: relative;
+    top:-9vh;
+    display: grid;
+    padding: 30px;
+}
+
+.message-input-field
+{
+    background-color: aliceblue;
+    color: rgb(7, 7, 7);
+    font-size: 20px;
+    border-radius: 10px;
+    border: 1px solid #04101f;
+}

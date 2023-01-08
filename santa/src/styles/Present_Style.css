@@ -1,0 +1,28 @@
+#present-container
+{
+    position: relative;
+    float: left;
+    border: 1px solid gold;
+    min-width: 5vw;
+    height: 2vh;
+    display: inline;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+#present-name
+{
+  
+    display: inline;
+}
+
+#remove-present-button
+{
+    background: none;
+    width: 2vh;
+    height: 2vh;
+    position: relative;
+    top:0;
+    left: 0;
+    float: right;
+}

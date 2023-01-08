@@ -1,0 +1,222 @@
+#profile-section-container
+{
+    border-radius: 40px;
+    overflow: hidden;
+    background-image:linear-gradient(#1c507a, #0e1d38);
+    width: 90vw;
+    height: 80vh;
+    position: absolute;
+    top:-600px;
+    left: -37vw;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    border: 1px solid white;
+}
+
+#christmas-tree-image
+{
+    position: absolute;
+    top:-3vh;
+    left:10vw;
+    opacity: 0.5;
+    width: 40vw;
+    height: 80vh;
+}
+#header-container
+{
+    width: 10vw;
+    height: 3vh;  
+    position: absolute;
+    left: 40.5vw;
+    top:3vh;
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    text-align: center;
+    z-index: 2;
+}
+
+#header-container > #hello-header
+{
+    margin-top: 0.6vh;
+    position: absolute;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: white;
+}
+
+#log-out-button
+{
+    position: relative;
+    top:-2vh;
+    right: 34vw;
+    display: inline;
+    width: 10vw;
+    height: 3vh;
+    margin-left: 37.5vw;
+    margin-right: 37.5vw;
+    margin-top: 15vh;
+}
+
+.main-section-button
+{
+    background-color: rgb(240, 236, 236);
+    border-radius: 40px;
+    border: 2px solid rgb(21, 55, 129);;
+    color: rgb(34, 84, 190);
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: all 0.5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+}
+
+.main-section-button:hover
+{
+    cursor: pointer;
+    scale: 1.3;
+}
+
+/* message-button content */
+#content
+{
+    position: relative;
+    width: 65vw;
+    height: 55vh;
+    top: 12vh;
+    margin-left: 12vw;
+    margin-right: 12vw; 
+}
+
+#mail-box-button
+{
+    margin-top: 40px;
+}
+
+.profile-window-button-container
+{
+    position: relative;
+    z-index: 0;
+    float: left;
+    transition: all 0.5s ease-in-out;
+}
+
+.profile-window-button-container:hover
+{
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.profile-window-button-container> button
+{
+    background: none;
+    border: none;
+}
+
+.profile-window-button-container > button > img
+{
+    width: 15vw;
+    height: 25vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.profile-window-button-container> header
+{
+    font-size: 35px;
+    position: absolute;
+    top:25vh;
+   
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+/* mail-box content  */
+.shadow-background
+{
+    background-color: rgb(0,0,0,0.5);
+	top:0;
+	left: 0;
+    position: fixed;
+    width: 100%;
+	height: 100vh;
+    z-index: 2;
+}
+
+#mail-box-content
+{
+    border: 2px solid white;
+    overflow: hidden;
+    z-index: 2;
+    background-image:
+    linear-gradient(rgba(23, 99, 122, 0.671), rgb(3, 22, 27));
+    position: relative;
+    top:14vh;
+    left: 17vw;
+    width: 65vw;
+    height: 70vh;
+    border-radius: 20px;
+    transition: all 0.5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+    box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
+}
+
+.profile-window-container
+{
+    z-index: 2;
+    position: relative;
+    top:0;
+    left: 0;
+    
+}
+
+.profile-window-container > img
+{
+    position: absolute;
+    top: -15vh;
+    left: -13vw;
+    width: 93vw;
+    height: 86vh;
+}
+
+.icon-button
+{
+    background: none;
+    border: none;
+    position: absolute;
+    top: 0vh;
+    right: 0vw;
+    transition: all 0.5s ease-in-out;
+}
+
+.icon-button:hover
+{
+    cursor: pointer;
+    transform: scale(1.3);
+}
+
+.icon-button >img
+{
+    width: 2vw;
+    height: 2vw;
+}
+
+#messages
+{
+    position: relative;
+    top:3vh;
+    left: 3vw;
+    width: 90%;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
