@@ -12,6 +12,7 @@
     -moz-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
     border: 1px solid white;
+    
 }
 
 #christmas-tree-image
@@ -40,7 +41,8 @@
 
 #header-container > #hello-header
 {
-    margin-top: 0.6vh;
+   
+    margin-left: 45px;
     position: absolute;
     font-weight: 600;
     font-size: 20px;
@@ -211,12 +213,4 @@
     height: 2vw;
 }
 
-#messages
-{
-    position: relative;
-    top:3vh;
-    left: 3vw;
-    width: 90%;
-    margin-left: 1vw;
-    margin-right: 1vw;
-}
+

@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 import new_presents_obj from '../../useful_functions/new_presents_obj';
-
+import pop_info from "../../useful_functions/pop_info";
 export default function EditPresent(props)
 {
     const [name, setName] = useState(props.present_to_edit)
@@ -22,6 +22,7 @@ export default function EditPresent(props)
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
             })
+            pop_info("present-edited")
             window.location = "/"
         } 
         catch (error) {console.log(error)}} 

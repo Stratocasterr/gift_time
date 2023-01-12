@@ -25,36 +25,22 @@ CREATE TABLE presents(
     },
 
     "user_presents": 
-    [
         {
-            "id":"1",
-            "present_name":"minecraft"
+            "0":"minecraft"
+            "1":"lego",
+            "2":"csgo"
         },
-        {
-            "id":"2",
-            "present_name":"iphone"
-        }
-       
-    ],
+
 
     "user_messages":
-    [
         {
-            "id":"1",
-            "subject":"dear santa",
-            "text":"blablabla1",
-            "date":"01.02.2003",
-            "from":"santa"
-        },
-        {
-            "id":"2",
-            "subject":"hello",
-            "text":"blablabla2",
-            "date":"02.12.2003",
-            "from":"john"
+            id:"0"
+            text:"abcd",
+            subject:"xzy",
+            sender:"xxx"
         }
-       
-    ]
-}
+            ...
+           
+        },
 
 */

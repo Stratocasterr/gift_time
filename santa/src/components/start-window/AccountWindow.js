@@ -29,29 +29,26 @@ export default function AccountWindow(props)
         user_messages: {}
     }
    
-   
-
 // take all users from database
-const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([])
 
-const getUsers = async () => {
-    try {
-        const response = await fetch("http://localhost:5000/santa_users")
-        const jsonData = await response.json()
-        setUsers(jsonData);
-    } 
-    catch (error) {console.log(error)}
-}
+    const getUsers = async () => {
+        try {
+            const response = await fetch("http://localhost:5000/santa_users")
+            const jsonData = await response.json()
+            setUsers(jsonData);
+        } 
+        catch (error) {console.log(error)}
+    }
 
-useEffect(() => {
-    getUsers();
-}, [])
+    useEffect(() => {
+        getUsers();
+    }, [])
 
 //take user names list
-
-let usernames
-if(users != null && users.length > 0)
-    usernames = users.map((user) => {return user.user_data.username})
+    let usernames
+    if(users != null && users.length > 0)
+        usernames = users.map((user) => {return user.user_data.username})
 
 
 // logging in / out
@@ -65,26 +62,18 @@ if(users != null && users.length > 0)
         }    
     })
     
-
     function check_login_input()
-    {
-        
+    {  
         if(usernames.includes(username))
         {
-            
             users.forEach((user) => {
                 if(user.user_data.username === username)
-                {
-                  
+                { 
                     if(user.user_data.password === password)
                     {
-                       
                         pop_info("correct-login-password")
                         setLogin(true)
-                        
-                        //localStorage.setItem('signed_user', username)
-                        localStorage.setItem('signed_user',JSON.stringify(user))
-                        
+                        localStorage.setItem('signed_user',JSON.stringify(user))  
                         $(document.querySelector('#main-header')).css('display','none')                    
                     }
                     else pop_info("invalid-password")
@@ -171,7 +160,6 @@ if(users != null && users.length > 0)
         } 
         catch (err) 
         {console.error(err.message)}
-
     }
 
 // display letters instead of dots while typing password
@@ -181,10 +169,8 @@ if(users != null && users.length > 0)
         if (x.type === "password") x.type = "text";
         else x.type = "password";     
     }
-
     return(
         <div >
-            
             {!login &&  <div id="sing_in_window">            
                 <button 
                         id="log-in-start-button"
@@ -270,13 +256,11 @@ if(users != null && users.length > 0)
                                             {
                                                 pop_info('username-exist')
                                                 new_account.username = ''
-                                            }
-                                            
+                                            }                                  
                                             else 
                                             {
                                                 pop_info('correct-username')
-                                                new_account.username = create_username
-                                                
+                                                new_account.username = create_username                                         
                                             }
                                         }
                                     }
@@ -326,12 +310,11 @@ if(users != null && users.length > 0)
                                                 new_account.password =''
                                                 pop_info('invalid-retype-password')
                                             }
-                                               
+
                                             if(u.target.value === create_password) 
                                             {
                                                 new_account.password = create_password
-                                                pop_info('correct-retype-password')
-                                                
+                                                pop_info('correct-retype-password')                 
                                             }                                          
                                         }
                                     }/>
@@ -346,7 +329,6 @@ if(users != null && users.length > 0)
                                                     
                                                     addUser(new_account)
                                                 }
-                                            //open_account_window("log-in")
                                         }}
                                     >
                                     Create account

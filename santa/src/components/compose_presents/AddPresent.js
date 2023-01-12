@@ -1,11 +1,12 @@
 import React, { Fragment, useState } from "react";
 import new_presents_obj from "../../useful_functions/new_presents_obj";
+import pop_info from "../../useful_functions/pop_info";
 const AddPresent = (props) =>
 {
     const [newPresentName, setNewPresentName] = useState("");
     let user_presents = props.user_presents
   
-    async function new_presents_list()
+    async function add_new_present()
     {  
         let new_presents = new_presents_obj(user_presents, newPresentName)
        
@@ -18,13 +19,14 @@ const AddPresent = (props) =>
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
             });
-           window.location = "/" 
+            pop_info("present-added")
+            window.location = "/" 
         } 
         catch (error) {console.log(error)}       
     }   
     
     return(
-        <div id='new-presents-adder'>
+        <div id='new-presents-adder' style={{'marginLeft':'calc('+props.marginTop+' * 0.4)'}}>
 
             <header className="text-center mt-5">Add new present</header>
             <form className="d-flex mt-5" >
@@ -34,7 +36,7 @@ const AddPresent = (props) =>
                 value={newPresentName}
                 onChange={e => setNewPresentName(e.target.value)}
                 />
-                <button type = "button" onClick={ () => {new_presents_list()}} className="btn btn-success">Add</button>
+                <button type = "button" onClick={ () => {add_new_present()}} className="btn btn-success">Add</button>
                
             </form>     
         </div>

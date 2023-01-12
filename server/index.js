@@ -10,11 +10,6 @@ app.use(express.json()); //req.body
 
 // SANTA USERS 
 
-
-
-//users 
-
-
 //get all users
 app.get("/santa_users", async(req, res) => {
   try
@@ -83,8 +78,7 @@ app.delete("/santa_users/:id", async (req, res) =>
 })
 
 
-// user presents 
-
+// USER PRESENTS
 
 // update user's presents into user of given id
 //UPDATE santa_users SET user_presents= '[{"id":1, "present_name":"lego"},{"id":2,"present_name":"iphone13"}]' WHERE id=25;
@@ -126,20 +120,6 @@ app.get("/santa_users/:id/user_presents", async(req, res) => {
 })
 
 
-//get all messages of user with given id 
-// SELECT user_messages FROM santa_users WHERE id = 3;
-app.get("/santa_users/:id/user_messages", async(req, res) => {
-  try
-  {
-    const { id } = req.params;
-    const user = await pool.query("SELECT user_messages FROM santa_users WHERE id = $1", 
-    [id]);
-  
-    res.json(user.rows[0])
-  } 
-  catch (err) {console.error(err.message);}
-})
-
 // SANTA PRESENTS
 
 //get all presents
@@ -156,7 +136,6 @@ app.get("/presents", async(req, res) => {
     console.error(err.message);
   }
 })
-
 
 //get a present of given id
 
@@ -226,6 +205,47 @@ app.put("/presents/:id", async (req, res) =>
   }
 })
 
+
+//USER MESSAGES
+
+
+//get all messages of user with given id 
+// SELECT user_messages FROM santa_users WHERE id = 3;
+
+app.get("/santa_users/:id/user_messages", async(req, res) => {
+  try
+  {
+    const { id } = req.params;
+    const user = await pool.query("SELECT user_messages FROM santa_users WHERE id = $1", 
+    [id]);
+  
+    res.json(user.rows[0])
+  } 
+  catch (err) 
+  {
+    console.error(err.message);
+  }
+})
+
+//update messages for user
+app.put("/santa_users/:id/user_messages", async (req, res) =>
+{
+  try
+  {
+    const { id } = req.params;
+    const user_messages  = req.body;
+    const updateMessages = await pool.query(
+      "UPDATE santa_users SET user_messages = $1 WHERE id = $2",
+      [user_messages, id])
+      
+    res.json("user messages was updated")
+  }
+
+  catch(err)
+  {
+    console.log(err.message)
+  }
+})
 
 app.listen(5000, () => {
   console.log("server has started on port 5000");

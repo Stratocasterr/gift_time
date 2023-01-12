@@ -1,10 +1,20 @@
 import React from "react"
 import $ from 'jquery'
 import Message from "../messages_system/Message"
-export default function MailBox()
+export default function MailBox(props)
 {
+    const signed_user = props.signed_user
+    
+    
+    let user_messages = props.signed_user_messages
+    if (user_messages === undefined) user_messages = {}
+    
     const [state, setState] = React.useState(false)
     
+    if(Object.keys(user_messages).length) 
+        user_messages = user_messages.user_messages
+
+
     function change_state()
     {
         setState(prevState => {return !prevState})
@@ -12,9 +22,28 @@ export default function MailBox()
         $(document.querySelector('.pop_window')).css('visibility','visible')
         $(document.querySelector('.window_container')).css('opacity','1')
         $(document.querySelector('.window_container')).css('visibility','visible')
-       
     }
-
+    
+    let messages_to_display = []
+    if (typeof user_messages ==='object')
+    {
+        
+        const messages_keys = Object.keys(user_messages)
+        messages_keys.forEach(key => {
+            messages_to_display.push(
+                <Message 
+                    sender = {user_messages[key].sender}                      
+                    subject = {user_messages[key].subject}               
+                    message = {user_messages[key].text}
+                    signed_user = {signed_user}
+                    message_id = {key}
+                    all_user_messages = {user_messages}
+                    
+                />  
+            )
+        })
+    }
+    
     return(
         <div id="mail-box-container" >
             {!state && <div id="mail-box-button" className="profile-window-button-container" >
@@ -37,18 +66,7 @@ export default function MailBox()
                                 </button>
                             
                                 <div id="messages">
-                                    <Message 
-                                    sender = {"john"}
-                                    age ={"10"}
-                                    subject = {"present"}
-                                    sender_img = {""}
-                                    message = {`Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                                                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
-                                                unknown printer took a galley of type and scrambled it to make a type specimen book. 
-                                                It has survived not only five centuries, but also the leap into electronic typesetting.`}
-
-                                    date = {"20.08.2021"}
-                                    />  
+                                    {messages_to_display}
                                 </div>    
                             </div>         
                     </div>          

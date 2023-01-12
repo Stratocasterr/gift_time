@@ -3,13 +3,18 @@ import React, { useState, Fragment, useEffect } from "react";
 import AddPresent from './AddPresent';
 import EditPresent from './EditPresent';
 import new_presents_obj from '../../useful_functions/new_presents_obj';
+import pop_info from "../../useful_functions/pop_info";
 
+const ListAllPresents = (props) => 
+{
+    let user_id
+    if(typeof props.signed_user !== 'undefined')
+        user_id= props.signed_user.id
 
-const ListAllPresents = (props) => {
-    
-   
-    let user_id = props.id
-    let main_header = "Your presents"
+    if(props.sender_id) 
+        user_id = props.sender_id
+
+    let main_header = props.main_header
     let presents_path = "/santa_users/" + user_id + '/user_presents'
 
     // check if user is editing present database
@@ -18,15 +23,11 @@ const ListAllPresents = (props) => {
     if(localStorage.getItem('editing-present-database')!=null)
         editing_present_database = JSON.parse(localStorage.getItem('editing-present-database'))
     
-
    // states
    const [state, setState] = React.useState(editing_present_database);
    const [top_present_index, setTopPresentIndex] = React.useState(0)
    const [presents, setPresents] = React.useState([])
    
-
-
-
     const getPresents = async() =>{
         try {
             const response = await fetch("http://localhost:5000"+presents_path)
@@ -42,7 +43,6 @@ const ListAllPresents = (props) => {
         getPresents();
     }, [])
 
-
     // for scrolling presents in table
     var displayed_presents_amount = 5
     function change_top_present_index(direction)
@@ -53,10 +53,7 @@ const ListAllPresents = (props) => {
                 if(index>=0 && index <= presents.length - displayed_presents_amount) return(index)
                 else return(prevIndex)
             })
-    }
-
-    // get presents from database
-    
+    } 
 
     // close / open database table window
     function change_state(message)
@@ -70,18 +67,18 @@ const ListAllPresents = (props) => {
     }
 
     const deletePresent = async (present_to_delete) => {
-        
+
         try {        
             const body = new_presents_obj(presents.filter((present) => 
                 present!==present_to_delete),false);
 
-           
             const response = await fetch(`http://localhost:5000`+presents_path,
             {
                 method:"PUT",
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
             })
+            pop_info("present-removed")
             window.location = "/"
            
         } 
@@ -89,9 +86,12 @@ const ListAllPresents = (props) => {
     
     return(
         <div>
-            {!state  && <div className="profile-window-button-container" >
+            {!state  && <div 
+                className="profile-window-button-container" 
+                style={{'marginTop':props.marginTop}}>
                 <button
                     id="present-database-button"     
+                    style={{'top':'0'}}
                     onClick={()=>
                     {
                         change_state(true)
@@ -99,7 +99,10 @@ const ListAllPresents = (props) => {
                         localStorage.setItem('editing-present-database',true)
                     }}
                     type="button">
-                    <img alt = "mail_img" src={require("../../images/gift_img.png")}/>        
+                    <img 
+                        style={{'marginTop':25}}
+                        alt = "gift_img" 
+                        src={require("../../images/gift_img.png")}/>        
                 </button>
                 <header >Presents</header>
             </div>}
@@ -123,6 +126,7 @@ const ListAllPresents = (props) => {
                                     user_presents = {presents}
                                     presents_path = {presents_path}
                                     user_id = {user_id}
+                                    marginTop = {props.marginTop}
                                 />
                             </td>
                             <h1 className="text-center mt-5" style={{color:"white"}}>{main_header}</h1>

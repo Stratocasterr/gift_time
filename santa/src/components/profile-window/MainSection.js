@@ -3,36 +3,83 @@ import MailBox from "./MailBox";
 import ListAllPresents from '../compose_presents/ListAllPresents'
 import ComposeMessage from "../messages_system/ComposeMessage";
 
-
 export default function MainSection(props)
 {
-   
     let user_components 
-    const signed_user = props.signed_user.user_data
+    const signed_user_data = props.signed_user.user_data
+    const [signed_user_messages,setSigned_user_messages] = useState({})
+    const [all_users,setAll_users] = useState({})
+
     
-//components for child user
-    if(signed_user.account_type === "Child") 
-        user_components = [ListAllPresents(props.signed_user), 
-                            MailBox(signed_user), ComposeMessage(signed_user)]
-//components for santa user
-    else if(signed_user.account_type === "Elf") 
-        user_components = [MailBox(signed_user)]
-//components for elf user
-    else if(signed_user.account_type === "Santa") 
-        user_components = [MailBox(signed_user)]
+// get user messages
+    const getMessages = async() =>{
+        try {
+            const response = await fetch(`http://localhost:5000/santa_users/`+
+                                props.signed_user.id+`/user_messages`)
+            const jsonData = await response.json()   
+            
+            setSigned_user_messages(jsonData)
+            
+        } catch (error) {console.log(error)}
+    }
+
+// get all users
+    const getAllUsers = async() =>{
+        try {
+            const response = await fetch("http://localhost:5000/santa_users")
+            const jsonData = await response.json()   
+            
+            setAll_users(jsonData)
+            
+        } catch (error) {console.log(error)}
+    }
     
-    
+    useEffect(() => {   
+        getMessages()
+        getAllUsers()
+    }, [])
+
     return(
         <div>
             <div id ="profile-section-container">
                 <div id = "header-container">
-                    <header id="hello-header">Hello {signed_user.username}</header>
-            
+                    <header 
+                        id="hello-header"
+                       
+                        >Hello 
+                        {" " + signed_user_data.username}
+                    </header> 
                 </div>
-               
                 <div id = "content">
-                    {user_components}
-                </div>              
+                    <div className="MScomponent">
+                        <MailBox
+                            signed_user = {props.signed_user}
+                            signed_user_messages = {signed_user_messages}         
+                            
+                        />
+                    </div>
+
+                    <div className="MScomponent">
+                        <ComposeMessage
+                            signed_user = {props.signed_user}
+                            all_users = {all_users}
+                            main_header = {"Write message"}
+                        />
+                    </div>
+                       
+                    <div className="MScomponent">
+                        {signed_user_data.account_type === "Child" && 
+                        <> 
+                            <ListAllPresents
+                                signed_user = {props.signed_user}
+                                main_header = {"Your presents"}
+                            />    
+                        </>}
+                    </div>
+                    
+                    
+
+                </div>          
             </div>
         </div>    
     )
