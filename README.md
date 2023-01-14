@@ -43,4 +43,13 @@ Elf is a Santa's best helper. His main task is to prepare gifts after receiving 
 
 https://user-images.githubusercontent.com/101999487/212500144-d63b0b29-6db3-4a03-ac03-b13ba5fa9846.mp4
 
+# 2. Add/edit/delete presents in Your list.
+
+https://user-images.githubusercontent.com/101999487/212500233-16586466-476b-42f3-b3d6-9184defab69c.mp4
+
+# 3. Write messages to other users.
+## In mailbox, user is able to browse through all messages, reply to chosen one or just delete one of them.
+
+https://user-images.githubusercontent.com/101999487/212500343-dd227b57-558d-472a-a0d1-373e4ee28e16.mp4
+
 
