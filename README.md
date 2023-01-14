@@ -69,6 +69,7 @@ https://user-images.githubusercontent.com/101999487/212500748-cda25d19-7df1-4baf
 <h> Backend </h>
 <p align="left"> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a>  </p>
 
-+ API testing
+API testing
 Postman
-![image](https://user-images.githubusercontent.com/101999487/212501139-6742dbdf-ac5b-4a19-b21d-dd02f5956cb2.png)
+
+<img width="40" height="40" src="https://user-images.githubusercontent.com/101999487/212501172-a11c27f8-ef80-47c5-9f88-a34233d07667.png"></img>
