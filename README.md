@@ -52,4 +52,9 @@ https://user-images.githubusercontent.com/101999487/212500233-16586466-476b-42f3
 
 https://user-images.githubusercontent.com/101999487/212500343-dd227b57-558d-472a-a0d1-373e4ee28e16.mp4
 
+# 4. Santa is able to edit child's presents list.
+## Then, if he finally make up his mind, send presents list to Elves. They are his helpers who will prepare presents to send.
+
+https://user-images.githubusercontent.com/101999487/212500748-cda25d19-7df1-4baf-a36a-5ee245319406.mp4
+
 
