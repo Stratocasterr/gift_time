@@ -15,6 +15,7 @@ Join us to feel this christmas day atmosphere! Just create account, by choosing 
 
 In my system, there are three different account types to choose from:
 
+
 #### Child
 <p align="center">
 <img src = "https://user-images.githubusercontent.com/101999487/208208379-3e8009ef-98ee-47d9-81b6-48c3b5daa334.png" width="600" height ="400" />
@@ -35,3 +36,11 @@ Santa receives messages from children  about their dream presents. After making 
 </p>
 
 Elf is a Santa's best helper. His main task is to prepare gifts after receiving list from Santa. After that, he can mark given order as ' ready to send '. What is more, he can also write message to Santa if there are some questions/ doubts about gifts.
+
+## Demo
+
+# 1. Create new account and log in into system.
+
+https://user-images.githubusercontent.com/101999487/212500144-d63b0b29-6db3-4a03-ac03-b13ba5fa9846.mp4
+
+
