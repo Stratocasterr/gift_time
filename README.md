@@ -37,23 +37,23 @@ Santa receives messages from children  about their dream presents. After making 
 
 Elf is a Santa's best helper. His main task is to prepare gifts after receiving list from Santa. After that, he can mark given order as ' ready to send '. What is more, he can also write message to Santa if there are some questions/ doubts about gifts.
 
-## Demo
+# Demo
 
-# 1. Create new account and log in into system.
-
+## 1. Create new account and log in into system.
+### System will check if username is available and password is correctly retyped.
 https://user-images.githubusercontent.com/101999487/212500144-d63b0b29-6db3-4a03-ac03-b13ba5fa9846.mp4
 
-# 2. Add/edit/delete presents in Your list.
-
+## 2. Add/edit/delete presents in Your list.
+### Child user can create his dream presents list and send it to Santa.
 https://user-images.githubusercontent.com/101999487/212500233-16586466-476b-42f3-b3d6-9184defab69c.mp4
 
-# 3. Write messages to other users.
-## In mailbox, user is able to browse through all messages, reply to chosen one or just delete one of them.
+## 3. Write messages to other users.
+### In mailbox, user is able to browse through all messages, reply to chosen one or just delete one of them.
 
 https://user-images.githubusercontent.com/101999487/212500343-dd227b57-558d-472a-a0d1-373e4ee28e16.mp4
 
-# 4. Santa is able to edit child's presents list.
-## Then, if he finally make up his mind, send presents list to Elves. They are his helpers who will prepare presents to send.
+## 4. Santa is able to edit child's presents list.
+### Then, if he finally make up his mind, send presents list to Elves. They are his helpers who will prepare presents to send.
 
 https://user-images.githubusercontent.com/101999487/212500748-cda25d19-7df1-4baf-a36a-5ee245319406.mp4
 
