@@ -57,6 +57,13 @@ https://user-images.githubusercontent.com/101999487/212500343-dd227b57-558d-472a
 
 https://user-images.githubusercontent.com/101999487/213158724-2e8a94ca-66f7-4a21-bca4-4619866b551a.mp4
 
+## 5. Elves mark presents order as "completed",  when they complete all ordered presents.
+
+https://user-images.githubusercontent.com/101999487/213159445-195e8e86-b890-438a-a87e-0ba8686429d6.mp4
+
+## 5. " Child's presents successfully sent " notification.
+If Elf marks Child's present as "completed", Child will be given a notification about it.
+https://user-images.githubusercontent.com/101999487/213160012-b37bb9c7-e408-46e7-a655-ec5641341230.mp4
 
 # Technologies
 <h3 align="center">Here are technologies I used</h3>
