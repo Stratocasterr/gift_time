@@ -25,7 +25,7 @@ export default function AccountWindow(props)
         username: create_username,
         password: create_password,
         account_type: create_type,
-        user_presents: {},
+        user_presents: {"status":-1},
         user_messages: {}
     }
    
@@ -45,11 +45,10 @@ export default function AccountWindow(props)
         getUsers();
     }, [])
 
-//take user names list
+// take users' names list
     let usernames
     if(users != null && users.length > 0)
         usernames = users.map((user) => {return user.user_data.username})
-
 
 // logging in / out
     useEffect(()=>{
@@ -61,7 +60,8 @@ export default function AccountWindow(props)
             setLogout(false)
         }    
     })
-    
+
+// check if user name + password input is correct 
     function check_login_input()
     {  
         if(usernames.includes(username))
@@ -83,6 +83,7 @@ export default function AccountWindow(props)
         else pop_info("invalid-username")
     }
 
+// open main account window after signed in
     function open_account_window(button_name)
     {
         const sing_in_window = document.querySelector('#sing_in_window')
@@ -146,7 +147,8 @@ export default function AccountWindow(props)
 
         const user_presents = e.user_presents
         const user_messages = e.user_messages
-    
+        
+        // update users database
         try {
         
             const body = {user_data, user_presents, user_messages }
@@ -194,7 +196,9 @@ export default function AccountWindow(props)
                                     type="text" 
                                     placeholder="Username*" 
                                     id = "username_input"
-                                    value = {username}
+                                    value = {
+                                        typeof username === 'string'? username:''
+                                    }
                                     onChange = { (u) => setUsername(u.target.value)}
                                     />
                                 <br></br>
@@ -276,8 +280,7 @@ export default function AccountWindow(props)
                                                 if(account_types.includes(u.target.value))
                                                 {
                                                     setCreate_type(u.target.value)
-                                                    new_account.account_type = u.target.value
-                                                    
+                                                    new_account.account_type = u.target.value              
                                                 } 
                                                 else new_account.account_type = ''                                 
                                             }

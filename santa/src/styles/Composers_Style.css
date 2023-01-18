@@ -3,11 +3,13 @@
     display: flex;
 }
 
-#compose-mess-button,#compose-present-button
+#compose-mess-button
 {
     position: relative;
-   
-    margin-top: -90px;
+}
+#present-database-button
+{
+    margin-top: 100px;
 }
 
 img.compose 
@@ -23,14 +25,16 @@ h.compose
     left:1.5vw;
 }
 
-/* message composer */
+                                    /* message composer */
 #message-composer-container
 {
     background-color: #04101f;
     border: 1px solid white;
+    z-index: 2;
     border-radius: 20px;
-    position: relative;
-    top:-9vh;
+    position: absolute;
+    top:16vh;
+    left: 1vw;
     display: grid;
     padding: 30px;
 }
@@ -44,8 +48,113 @@ h.compose
     border: 1px solid #04101f;
 }
 
-
 .MScomponent
 {
     float: left;
+}
+
+                                    /* presents delivery info windows */
+
+
+.presents-list-completed
+{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: #04101f;
+    outline: 1px solid red;
+    opacity: 90%;
+    height: 150%;
+    width: 100%;
+    z-index: 1;
+}
+
+#presents-list-sent-header
+{
+    position: absolute;
+    color:green;
+    font-weight: 900;
+    text-align: center;
+    font-size: 90px;
+    z-index: 1;
+}
+
+#orders-header
+{
+    text-align: center;
+    position: relative;
+    font-size: 40px;
+    color: white;
+}
+
+#order-full-view
+{
+    padding: 40px;
+    min-height: 400px;
+    max-height: 600px;
+    position: absolute;
+    top: 0;
+    left:-55.5vw;
+    min-width: 1100px;
+    z-index: 1;
+}
+
+#order-fullview-container
+{
+    position: absolute;
+    top:0vh;
+    left: 2vw;
+    border: 1px solid white;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: #04101f;
+    float: right;
+    min-width:93%;
+    min-height: 40%;
+    height: 300px;
+}
+
+#name-img-btn-container>#child-img-name
+{
+    width: 20%;
+    padding: 10px;
+}
+
+#child-img-name>img
+{
+    height: 130px;
+    margin-left: 1.5vw;
+}
+
+#child-img-name>#child-name
+{
+    text-align: center;
+}
+
+#order-completed-btn
+{
+    margin-left: 1.5vw;
+}
+
+#present-list-container
+{
+    position: absolute;
+    top:20px;
+    left: 15vw;
+    float: right;
+    width: 60%;
+    z-index: 0;
+}
+
+#present-list-container> header
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.ordered-present
+{
+    font-size: 20px;
+    margin-bottom: 2px;
 }

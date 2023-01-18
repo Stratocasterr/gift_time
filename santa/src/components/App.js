@@ -7,8 +7,6 @@ export default function App()
         <>
             <div id="info_window"><h1> </h1></div>    
             <Start /> 
-        </>
-        
-        
+        </>   
     )
 }

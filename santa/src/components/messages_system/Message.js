@@ -1,12 +1,14 @@
 import React from 'react'
 import pop_info from '../../useful_functions/pop_info'
 import ListAllPresents from '../compose_presents/ListAllPresents'
+import ListOrder from '../delivery/ListOrder'
 import ComposeMessage from './ComposeMessage'
-
-
 export default function Message(props)
 {
 
+// assign all consts
+    const presents_list = props.presents_list
+    const order_message = props.order_message
     const sender_name = props.sender[0]
     const sender_id = props.sender[2]
     const sender_account_type = props.sender[1]
@@ -18,14 +20,15 @@ export default function Message(props)
             user_data:{username: sender_name, account_type: sender_account_type} 
         }]    
     
-    console.log("su",props.signed_user)
     const [fullView, setFullView] = React.useState(false)
 
+// display message in full view/ close full view
     function change_mess_view()
     {
         setFullView(prevView =>{ return !prevView})
     }
 
+// delete given message
     const deleteMessage = async (message_to_delete) => {
         try {        
             let body = props.all_user_messages
@@ -51,8 +54,8 @@ export default function Message(props)
             {!fullView&&<div 
                 id="message-shortcut" 
                 className = "message" >
-                <div 
-                    
+                
+                <div        
                     id="img-name-container">
                     <img  
                         alt="elf_img" 
@@ -61,10 +64,10 @@ export default function Message(props)
                     <span  id = "sender-name">
                         {sender_name} 
                         <h1 style={{
-                                position: "relative", 
-                                top:-5, 
-                                float:'right', 
-                                "fontSize":15}}>
+                            position: "relative", 
+                            top:-5, 
+                            float:'right', 
+                            "fontSize":15}}>
                         </h1>
                     </span>              
                 </div>
@@ -85,8 +88,9 @@ export default function Message(props)
                             : props.subject}
                 </h3>
 
-                
                 <div id="mess-buttons-container">
+                    {!order_message &&
+                    <>
                     <button 
                         className="mess-button" 
                         type='button' 
@@ -97,7 +101,6 @@ export default function Message(props)
                             src={require("../../images/delete_img.png")} 
                         />
                     </button>
-
                     <button 
                         className="mess-button" 
                         type='button' 
@@ -109,6 +112,14 @@ export default function Message(props)
                             style={{width: "5vh", "marginBottom" : -4}}
                             />
                     </button>
+                    </>}
+                    {order_message && <>
+                        <ListOrder
+                           presents_list = {presents_list}
+                           child_id = {props.sender[2]}
+                           child_name = {props.sender[0]}
+                        />
+                    </>}
                 </div>
             </div>}
             
@@ -153,15 +164,15 @@ export default function Message(props)
                         all_users = {user_to_reply}
                         main_header= {"Reply"}
                     />
-
+                    
                     {signed_user_account_type==='Santa' &&
                         <ListAllPresents
                             marginTop = {'100px'}
                             main_header = {props.sender[0] + "'s presents"}
                             sender_id = {props.sender[2]}
+                            account_type = {'Santa'}
                         />
-                    }       
-                                 
+                    }                          
                 </div>     
             </div>}              
         </div>

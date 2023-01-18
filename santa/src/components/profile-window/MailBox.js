@@ -3,18 +3,16 @@ import $ from 'jquery'
 import Message from "../messages_system/Message"
 export default function MailBox(props)
 {
+// assign variables  and consts
     const signed_user = props.signed_user
-    
-    
     let user_messages = props.signed_user_messages
     if (user_messages === undefined) user_messages = {}
-    
     const [state, setState] = React.useState(false)
     
     if(Object.keys(user_messages).length) 
         user_messages = user_messages.user_messages
 
-
+// close/ open mailbox
     function change_state()
     {
         setState(prevState => {return !prevState})
@@ -23,11 +21,11 @@ export default function MailBox(props)
         $(document.querySelector('.window_container')).css('opacity','1')
         $(document.querySelector('.window_container')).css('visibility','visible')
     }
-    
+
+// put user's messages in mailbox
     let messages_to_display = []
     if (typeof user_messages ==='object')
-    {
-        
+    {   
         const messages_keys = Object.keys(user_messages)
         messages_keys.forEach(key => {
             messages_to_display.push(
@@ -37,8 +35,8 @@ export default function MailBox(props)
                     message = {user_messages[key].text}
                     signed_user = {signed_user}
                     message_id = {key}
-                    all_user_messages = {user_messages}
-                    
+                    all_user_messages = {user_messages}    
+                    order_message = {false}        
                 />  
             )
         })
@@ -63,8 +61,7 @@ export default function MailBox(props)
                                     className="icon-button"
                                     onClick={change_state}>
                                     <img alt="x_button" src={require("../../images/x.png")}/>
-                                </button>
-                            
+                                </button>              
                                 <div id="messages">
                                     {messages_to_display}
                                 </div>    

@@ -6,7 +6,7 @@ import './styles/AccountWindow_Style.css'
 import './styles/MainSection_Style.css'
 import './styles/Messages_system_Style.css'
 import './styles/Composers_Style.css'
-import './styles/Present_Style.css'
+ import './styles/Present_Style.css'
 import './styles/EditPresentsDatabase.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

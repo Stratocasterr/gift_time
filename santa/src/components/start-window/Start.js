@@ -5,31 +5,26 @@ import HeaderLetter from './HeaderLetter'
 
 export default function Start()
 {
-    
+
+// letters for main header
     const letters = ['G', 'I', 'F', 'T', 'T', 'I' ,'M', 'E']
     const signed_user = JSON.parse(localStorage.getItem('signed_user'));
-    //localStorage.clear();
-   
 
-        const HeaderLetters = letters.map(letter =>
-            {
-                return(
-                    <HeaderLetter 
-                        letter = {letter}
-                    />
-                )
-            })
+    const HeaderLetters = letters.map(letter =>
+        {
+            return(
+                <HeaderLetter 
+                    letter = {letter}
+                />)
+        })
     
         return(
-            <div id = "start-container">
-                
+            <div id = "start-container">   
                 <div id = "main-header" style={{opacity:1}}>
                     <div className = "main-header" id = "gift-header">
                         {HeaderLetters}
                     </div>
-                </div>
-    
-                
+                </div>       
                 <img 
                     alt='gift' 
                     style={{width:400, height:400, position:'absolute', top:350}}

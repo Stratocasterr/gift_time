@@ -2,12 +2,10 @@
 {
     color: white;
     text-align: center;
-    
 }
 
 #new-presents-adder
 {
-   
     width: 400px;
     position: relative;
     top:0;
@@ -16,14 +14,12 @@
 
 #new-presents-adder > form
 {
-   
     width: 120%;
 }
 
 #new-presents-adder> header
 {
     font-size: 20px;
-   
     position: relative;
     top:0;
     left: 2vw;

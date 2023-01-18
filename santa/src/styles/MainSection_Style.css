@@ -12,7 +12,6 @@
     -moz-box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
     box-shadow: 0px 0px 24px -1px rgba(66, 68, 90, 1);
     border: 1px solid white;
-    
 }
 
 #christmas-tree-image
@@ -24,6 +23,7 @@
     width: 40vw;
     height: 80vh;
 }
+
 #header-container
 {
     width: 10vw;
@@ -41,7 +41,6 @@
 
 #header-container > #hello-header
 {
-   
     margin-left: 45px;
     position: absolute;
     font-weight: 600;
@@ -84,7 +83,7 @@
     scale: 1.3;
 }
 
-/* message-button content */
+                                /* message-button content */
 #content
 {
     position: relative;
@@ -95,9 +94,9 @@
     margin-right: 12vw; 
 }
 
-#mail-box-button
+#mail-box-button,#orders-box-button
 {
-    margin-top: 40px;
+    margin-top: 140px;
 }
 
 .profile-window-button-container
@@ -135,14 +134,13 @@
     font-size: 35px;
     position: absolute;
     top:25vh;
-   
     color: white;
     text-align: center;
     width: 100%;
     font-size: 20px;
 }
 
-/* mail-box content  */
+                            /* mail-box content  */
 .shadow-background
 {
     background-color: rgb(0,0,0,0.5);
@@ -179,7 +177,6 @@
     position: relative;
     top:0;
     left: 0;
-    
 }
 
 .profile-window-container > img
@@ -194,6 +191,7 @@
 .icon-button
 {
     background: none;
+    z-index: 2;
     border: none;
     position: absolute;
     top: 0vh;

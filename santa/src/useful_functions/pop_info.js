@@ -21,8 +21,7 @@ export default function pop_info_window(message)
         $('#info_window').css('background-color','red')
     }
 
-// user creating 
-
+// new user account creating 
     else if (message === "username-exist")
     {
         info_window.innerHTML = "Username already exist! Please choose another one"
@@ -45,7 +44,6 @@ export default function pop_info_window(message)
     }
 
 // present messages
-
     else if (message === "present-removed")
     {
         info_window.innerHTML = "Present successfully removed!"
@@ -70,6 +68,18 @@ export default function pop_info_window(message)
     {
         info_window.innerHTML = "Message successfully added!"
         $('#info_window').css('background-color','green')
+    }
+
+    else if (message === "mess-sent")
+    {
+        info_window.innerHTML = "Message successfully sent!"
+        $('#info_window').css('background-color','green')
+    }
+
+    else if (message === "fail-mess-sent")
+    {
+        info_window.innerHTML = "Fail with sending message!"
+        $('#info_window').css('background-color','red')
     }
     setTimeout(function(){info_window.innerHTML = ""}, 3000)
 }

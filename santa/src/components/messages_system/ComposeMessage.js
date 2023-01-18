@@ -1,36 +1,34 @@
 import React ,{useEffect, useState} from "react"
+import pop_info from "../../useful_functions/pop_info";
 export default function ComposeMessage(props)
 {
+
+// assign variables  and consts
     let signed_user_data
     let signed_user_id
-   
-    if(typeof props.signed_user === 'undefined') signed_user_data = {}
-        
+    if(typeof props.signed_user === 'undefined') signed_user_data = {} 
     else 
     {
         signed_user_data = props.signed_user.user_data
         signed_user_id = props.signed_user.id
-
     }
-    
     const all_users = props.all_users
     const main_header = props.main_header
-    
     let keys = []
     let ids = []
+
     if(typeof all_users !== 'undefined')
     {
         keys = Object.keys(all_users)
         ids = keys.map(key => {return all_users[key].id})
     }
 
-    
     let all_usernames = []
     let all_usernames_options = []
     let addressee_id 
-    const [addressee, setAdressee] = useState("")
-
+    
 // states
+    const [addressee, setAdressee] = useState("")
     const [composer_state, setOcomposer_state] = useState(false)
     const [messageText, setMessageText] = useState('')
     const [messageSubject, setMessageSubject] = useState('')
@@ -50,10 +48,9 @@ export default function ComposeMessage(props)
     }
     get_all_usernames()
 
-// get addresse id
+// get addressee id
     function get_addressee_id()
     { 
-        
         for(let i=0;i<ids.length;i++)
         {       
             if(all_users[keys[i]].user_data.username === addressee)
@@ -61,12 +58,13 @@ export default function ComposeMessage(props)
         }
     }
 
-//close/open mess sender
+// close/open mess sender window
     function change_composer_state()
     {
         setOcomposer_state((prevComposer_state) => !prevComposer_state)
     }
 
+// send message function
     async function send_message()
     {  
         
@@ -91,8 +89,6 @@ export default function ComposeMessage(props)
             "sender":[signed_user_data.username, 
                 signed_user_data.account_type, signed_user_id]
         }
-    
-    
         let keys = Object.keys(previous_addresse_mes.user_messages)
 
     //find id for new message
@@ -103,11 +99,9 @@ export default function ComposeMessage(props)
     // add new message to previous messages
         new_message_obj[new_mess_id] = new_message
 
-
-    // update addresse messages    
+    // update addressee messages database  
         try {         
-            const body =  new_message_obj;  
-           
+            const body =  new_message_obj;     
             const response = await fetch(`http://localhost:5000/santa_users/`+ 
                                                           addressee_id  + `/user_messages`, 
             {
@@ -115,9 +109,14 @@ export default function ComposeMessage(props)
                 headers: {"Content-Type" : "application/json"},
                 body: JSON.stringify(body)
             });
-            window.location = "/" 
+            window.location = "/"
+            pop_info("mess-sent")     
         } 
-        catch (error) {console.log(error)}       
+        catch (error) 
+        {
+            pop_info("fail-mess-sent")
+            console.log(error)
+        }   
     }   
 
     return(
@@ -133,7 +132,8 @@ export default function ComposeMessage(props)
                 src={require("../../images/write_message_img.png")} 
             />
             <span    
-                className="compose">
+                className="compose"
+                style={{'marginTop':'5px'}}>
                 {main_header}
             </span> 
         </button>}

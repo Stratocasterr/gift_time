@@ -4,10 +4,12 @@ import {useRef, useEffect} from 'react';
 
 export default function HeaderLetter(props)
 {
+// consts
     const christmas_colors = ['#F5624D', '#CC231E', '#34A65F', '#0F8A5F', '#235E6F']
     const letter = props.letter
     const ref = useRef(null);
 
+// to change christmas letters color randomly 
     function getRandomInt(min, max)
     {
         min = Math.ceil(min);
@@ -15,7 +17,7 @@ export default function HeaderLetter(props)
         return Math.floor(Math.random() * (max - min) + min)
     }
 
-    // code below add bouncing ball effect to header letters
+// code below add bouncing ball effect to header letters
     useEffect(() => {
         const element = ref.current;
         element.addEventListener("mouseover", (element) =>

@@ -7,7 +7,6 @@ const pool = require("./db");
 app.use(cors());
 app.use(express.json()); //req.body
 
-
 // SANTA USERS 
 
 //get all users
@@ -79,10 +78,7 @@ app.delete("/santa_users/:id", async (req, res) =>
 
 
 // USER PRESENTS
-
 // update user's presents into user of given id
-//UPDATE santa_users SET user_presents= '[{"id":1, "present_name":"lego"},{"id":2,"present_name":"iphone13"}]' WHERE id=25;
-// tak samo z messages i userfata tylko zamiast userpresents => user_messages, ==> userdata
 app.put("/santa_users/:id/user_presents", async (req, res) =>
 {
   try
@@ -120,98 +116,10 @@ app.get("/santa_users/:id/user_presents", async(req, res) => {
 })
 
 
-// SANTA PRESENTS
-
-//get all presents
-
-app.get("/presents", async(req, res) => {
-  try
-  {
-    const allPresents = await pool.query("SELECT * FROM presents");
-    res.json(allPresents.rows);
-    
-  } 
-  catch (err) 
-  {
-    console.error(err.message);
-  }
-})
-
-//get a present of given id
-
-app.get("/presents/:id", async(req, res) => {
-  try
-  {
-    const { id } = req.params;
-    const present = await pool.query("SELECT * FROM presents WHERE id = $1", 
-    [id]);
-  
-    res.json(present.rows[0])
-  } 
-  catch (err) 
-  {
-    console.error(err.message);
-  }
-})
-
-// put present in database
-
-app.post("/presents", async (req, res) => {
-  try {
-    const { present_name } = req.body;
-    const newPresent = await pool.query(
-      "INSERT INTO presents (present_name) VALUES($1) RETURNING *",
-      [present_name]
-    );
-
-    res.json(newPresent.rows[0]);
-  } catch (err) {
-    console.error(err.message);
-  }
-});
-
-// delete present
-app.delete("/presents/:id", async (req, res) =>
-{
-  try
-  {
-    const { id } = req.params;
-    const deletePresent = await pool.query("DELETE FROM presents WHERE id = $1",
-    [id])
-    res.json("present was deleted")
-  }
-  catch(err)
-  {
-    console.log(err.message)
-  }
-})
-
-app.put("/presents/:id", async (req, res) =>
-{
-  try
-  {
-    const { id } = req.params;
-    const { present_name } = req.body;
-    const updatePresent = await pool.query(
-      "UPDATE presents SET present_name = $1 WHERE id = $2",
-      [present_name, id])
-      
-    res.json("present was updated")
-  }
-
-  catch(err)
-  {
-    console.log(err.message)
-  }
-})
-
-
 //USER MESSAGES
-
 
 //get all messages of user with given id 
 // SELECT user_messages FROM santa_users WHERE id = 3;
-
 app.get("/santa_users/:id/user_messages", async(req, res) => {
   try
   {

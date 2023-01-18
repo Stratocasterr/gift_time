@@ -4,7 +4,8 @@ import pop_info from "../../useful_functions/pop_info";
 export default function EditPresent(props)
 {
     const [name, setName] = useState(props.present_to_edit)
-   
+
+// update given present's name
     const updateName = async() => 
     {
         let new_presents = props.user_presents.map((present) => {
@@ -14,7 +15,6 @@ export default function EditPresent(props)
         
         new_presents = new_presents_obj(new_presents)
         try {
-           
             const body = new_presents;
             const response = await fetch(`http://localhost:5000/santa_users/`+props.user_id+`/user_presents`,
             {
@@ -26,7 +26,7 @@ export default function EditPresent(props)
             window.location = "/"
         } 
         catch (error) {console.log(error)}} 
-    console.log(name)
+    
     return(
         <div id="edit-present-name-container"> 
             <Fragment>
@@ -37,7 +37,6 @@ export default function EditPresent(props)
                 data-target={`#${name}`}>
                 Edit
                 </button>
-
                 <div 
                     className="modal fade" 
                     id={name} 
@@ -45,7 +44,7 @@ export default function EditPresent(props)
                     role="dialog" 
                     aria-labelledby="exampleModalLabel" 
                     aria-hidden="true">
-
+                        
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                     <div className="modal-header">

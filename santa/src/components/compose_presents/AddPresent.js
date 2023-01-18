@@ -5,14 +5,15 @@ const AddPresent = (props) =>
 {
     const [newPresentName, setNewPresentName] = useState("");
     let user_presents = props.user_presents
-  
+
+// add new present to user's list
     async function add_new_present()
     {  
         let new_presents = new_presents_obj(user_presents, newPresentName)
-       
+        
+        // update presents list
         try {         
             const body =  new_presents;  
-           
             const response = await fetch(`http://localhost:5000/santa_users/`+props.user_id+`/user_presents`, 
             {
                 method:'PUT',
@@ -26,8 +27,7 @@ const AddPresent = (props) =>
     }   
     
     return(
-        <div id='new-presents-adder' style={{'marginLeft':'calc('+props.marginTop+' * 0.4)'}}>
-
+        <div id='new-presents-adder' style={{'marginLeft':'40px'}}>
             <header className="text-center mt-5">Add new present</header>
             <form className="d-flex mt-5" >
                 <input
@@ -36,11 +36,14 @@ const AddPresent = (props) =>
                 value={newPresentName}
                 onChange={e => setNewPresentName(e.target.value)}
                 />
-                <button type = "button" onClick={ () => {add_new_present()}} className="btn btn-success">Add</button>
-               
+                <button 
+                    type = "button" 
+                    onClick={ () => {add_new_present()}} 
+                    className="btn btn-success">
+                    Add
+                </button>   
             </form>     
         </div>
-   
     );
 };
 

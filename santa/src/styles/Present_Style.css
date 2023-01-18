@@ -1,18 +1,5 @@
-#present-container
-{
-    position: relative;
-    float: left;
-    border: 1px solid gold;
-    min-width: 5vw;
-    height: 2vh;
-    display: inline;
-    border-radius: 20px;
-    padding: 5px;
-}
-
 #present-name
 {
-  
     display: inline;
 }
 
@@ -25,4 +12,19 @@
     top:0;
     left: 0;
     float: right;
+}
+
+#delivery-status-container
+{
+    display: inline;
+    position: absolute;
+    left:100px;
+    top:100px;
+    text-align: center;
+    color:white
+}
+
+#delivery-status-container >img
+{
+    width: 100px;
 }
