@@ -63,6 +63,7 @@ https://user-images.githubusercontent.com/101999487/213159445-195e8e86-b890-438a
 
 ## 5. " Child's presents successfully sent " notification.
 If Elf marks Child's present as "completed", Child will be given a notification about it.
+
 https://user-images.githubusercontent.com/101999487/213160012-b37bb9c7-e408-46e7-a655-ec5641341230.mp4
 
 # Technologies
