@@ -18,21 +18,21 @@ In my system, there are three different account types to choose from:
 
 ## Child
 <p align="center">
-<img src = "https://user-images.githubusercontent.com/101999487/208208379-3e8009ef-98ee-47d9-81b6-48c3b5daa334.png" width="500" height ="300" />
+<img src = "https://user-images.githubusercontent.com/101999487/208208379-3e8009ef-98ee-47d9-81b6-48c3b5daa334.png" width="350" height ="200" />
 </p>
 
 Child can write messages to Santa to ask about dream gift and receive messages from santa and notifications about his/her gift delivery status. He is also able to text with other children, and Elves if it is need.
 
 ## Santa
 <p align="center">
-<img src = "https://user-images.githubusercontent.com/101999487/208208425-5f970ae2-2ec1-465f-b80b-92baeee24978.png" width="500" height ="300" />
+<img src = "https://user-images.githubusercontent.com/101999487/208208425-5f970ae2-2ec1-465f-b80b-92baeee24978.png" width="350" height ="200" />
 </p>
 
 Santa receives messages from children about their dream presents. After making up his decision, he can delete message and all gift list if kid was rude or edit this list by adding new presents or replacing presents with these more suitable. After editing, he send message with new presents list to his helpers - Elves. Ofcourse, everybody knows ( I hope), that there can be only one Santa type account!
 
 ## Elf
 <p align="center">
-<img src = "https://user-images.githubusercontent.com/101999487/208209339-62ff1467-a458-4db2-b300-b1b91b62d910.png" width="500" height ="300" />
+<img src = "https://user-images.githubusercontent.com/101999487/208209339-62ff1467-a458-4db2-b300-b1b91b62d910.png" width="350" height ="200" />
 </p>
 
 Elf is a Santa's best helper. His main task is to prepare gifts after receiving list from Santa. After that, he can mark given presents list as ' ready to send '. What is more, he can also write message to Santa if there are some questions/ doubts about gifts.
