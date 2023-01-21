@@ -76,12 +76,12 @@ https://user-images.githubusercontent.com/101999487/213160012-b37bb9c7-e408-46e7
 <p>• Node JS (I used 18.12.1 version)</p>
 <p>• npm ( I used 8.19.2 version)</p>
 <p>• express ( I used 4.18.2 version)</p>
-<p>• pg  I used ( I used 8.8.0 version)</p>
+<p>• pg  ( I used 8.8.0 version)</p>
 <p>• cors ( I used 2.8.5 version)</p>
 
 
 ## Technologies
-<h3 align="center">Here are technologies I used</h3>
+<h3 align="left">Here are technologies I used</h3>
 
 
 <h> Frontend </h>
