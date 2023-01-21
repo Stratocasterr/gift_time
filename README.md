@@ -71,14 +71,71 @@ https://user-images.githubusercontent.com/101999487/213160012-b37bb9c7-e408-46e7
 ### Requirements 
 
 <p>• PostgreSQL ( I used 6.15 version )</p>
+<p>• Node JS (I used 18.12.1 version)</p>
 <p>• ReactJS ( I used 18.2.0 version )</p>
 <p>• JQuery ( I used 3.6.1 version )</p>
-<p>• Node JS (I used 18.12.1 version)</p>
-<p>• npm ( I used 8.19.2 version)</p>
 <p>• express ( I used 4.18.2 version)</p>
 <p>• pg  ( I used 8.8.0 version)</p>
 <p>• cors ( I used 2.8.5 version)</p>
 
+### Instalation 
+
+#### PostgreSQL
+##### 1. Go to ofiicial postgresql website https://www.postgresql.org/download/ 
+##### 2. Select your operating system family ( I used Windows 10 ) and click "Download the installer".
+
+
+#### NodeJS
+##### 1. Go to ofiicial postgresql website https://nodejs.org/en/download/
+##### 2. Select your operating system family ( I used Windows 10 ) and download the installer.
+##### 3. Verify instalation
+```
+node -v
+```
+(The system should display the Node.js version installed on your system)
+
+#### React JS
+Full tutorial how to install React JS app you can find here: https://github.com/facebook/create-react-app
+
+#### JQuerry
+Full tutorial how to install JQuerry app you can find here: https://jquery.com/download/
+
+#### pg, cors
+
+You can install these packages using terminal ( I installed it in VSCode terminal )
+
+```
+npm install cors
+
+```
+
+```
+npm install pg
+
+```
+
+#### express
+Assuming you’ve already installed Node.js, create a directory to hold your application, and make that your working directory.
+
+```
+mkdir myapp
+cd myapp
+
+```
+
+Use the npm init command to create a package.json file for your application. For more information on how package.json works, see Specifics of npm’s package.json handling.
+
+```
+npm init 
+
+```
+Enter app.js, or whatever you want the name of the main file to be. If you want it to be index.js, hit RETURN to accept the suggested default file name.
+Now install Express in the myapp directory and save it in the dependencies list. For example:
+
+```
+npm install express
+
+```
 
 ## Technologies
 <h3 align="left">Here are technologies I used</h3>
