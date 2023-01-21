@@ -106,12 +106,10 @@ You can install these packages using terminal ( I installed it in VSCode termina
 
 ```
 npm install cors
-
 ```
 
 ```
 npm install pg
-
 ```
 
 #### express
@@ -120,21 +118,18 @@ Assuming you’ve already installed Node.js, create a directory to hold your app
 ```
 mkdir myapp
 cd myapp
-
 ```
 
 Use the npm init command to create a package.json file for your application. For more information on how package.json works, see Specifics of npm’s package.json handling.
 
 ```
 npm init 
-
 ```
 Enter app.js, or whatever you want the name of the main file to be. If you want it to be index.js, hit RETURN to accept the suggested default file name.
 Now install Express in the myapp directory and save it in the dependencies list. For example:
 
 ```
 npm install express
-
 ```
 
 ## Technologies
