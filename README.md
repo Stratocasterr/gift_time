@@ -73,11 +73,11 @@ https://user-images.githubusercontent.com/101999487/213160012-b37bb9c7-e408-46e7
 <p>• PostgreSQL ( I used 6.15 version )</p>
 <p>• ReactJS ( I used 18.2.0 version )</p>
 <p>• JQuery ( I used 3.6.1 version )</p>
-• Node JS (I used 18.12.1 version)
-• npm (8.19.2)
-• express (4.18.2)
-• pg (8.8.0)
-• cors (2.8.5)
+<p>• Node JS (I used 18.12.1 version)</p>
+<p>• npm ( I used 8.19.2 version)</p>
+<p>• express ( I used 4.18.2 version)</p>
+<p>• pg  I used ( I used 8.8.0 version)</p>
+<p>• cors ( I used 2.8.5 version)</p>
 
 
 ## Technologies
