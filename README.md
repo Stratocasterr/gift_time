@@ -66,6 +66,20 @@ If Elf marks Child's present as "completed", Child will be given a notification 
 
 https://user-images.githubusercontent.com/101999487/213160012-b37bb9c7-e408-46e7-a655-ec5641341230.mp4
 
+## Run it on Your machine
+
+### Requirements 
+
+• PostgreSQL ( I used 6.15 version )
+• ReactJS ( I used 18.2.0 version )
+• JQuery ( I used 3.6.1 version )
+• Node JS (I used 18.12.1 version)
+• npm (8.19.2)
+• express (4.18.2)
+• pg (8.8.0)
+• cors (2.8.5)
+
+
 ## Technologies
 <h3 align="center">Here are technologies I used</h3>
 
