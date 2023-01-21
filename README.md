@@ -132,6 +132,73 @@ Now install Express in the myapp directory and save it in the dependencies list.
 npm install express
 ```
 
+### Creating database
+
+To create santa users database I used Windows 10 cmd.
+#### 1. In your cmd use command "psql -U *your username*". For example, for username "postgres" it could be look like that:
+```
+psql -U postgres
+```
+hit "enter" key and then, type password You have set before during postgresql installation.
+
+#### 2. Your output should look similar to this:
+
+![image](https://user-images.githubusercontent.com/101999487/213876906-5f9ef56e-4ae8-4297-8f47-6b549e66c0b5.png)
+
+Now create database by typing:
+```
+CREATE DATABASE santa;
+CREATE TABLE santa_users(
+    id SERIAL PRIMARY KEY,
+    user_data JSON,
+    user_presents JSON,
+    user_messages JSON
+);
+```
+Your output should look like that:
+```
+CREATE DATABASE
+CREATE TABLE
+```
+
+### Run server
+To run server from terminal, go to main project directory "gift_time" and then go to "server" directory.
+
+```
+cd gift_time
+cd server
+```
+For example path may look like that:
+```
+C:\Users\*your username*\...\*directory with project* \gift_time\server
+```
+
+In server directory run command:
+```
+nodemon index
+```
+Your output should look like that:
+
+![image](https://user-images.githubusercontent.com/101999487/213877626-545a2cb2-42d2-4251-90e5-e34978a8d26a.png)
+
+### Run app
+To run server from terminal, go to main project directory "gift_time" and then go to "santa" directory.
+
+```
+cd gift_time
+cd santa
+```
+For example path may look like that:
+```
+C:\Users\*your username*\...\*directory with project* \gift_time\santa
+```
+
+In santa directory run command:
+```
+npm start
+```
+React app should run in Your browser.
+
 ## Technologies
 <h3 align="left">Here are technologies I used</h3>
 
