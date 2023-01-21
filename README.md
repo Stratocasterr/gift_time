@@ -13,7 +13,7 @@ Join us to feel christmas day atmosphere! Just create account, by choosing passw
 
 ## Account types
 
-In my system, there are three different account types to choose from:
+In this system, there are three different account types to choose from:
 
 
 ### Child
@@ -70,9 +70,9 @@ https://user-images.githubusercontent.com/101999487/213160012-b37bb9c7-e408-46e7
 
 ### Requirements 
 
-• PostgreSQL ( I used 6.15 version )
-• ReactJS ( I used 18.2.0 version )
-• JQuery ( I used 3.6.1 version )
+<h>• PostgreSQL ( I used 6.15 version )</h>
+<h>• ReactJS ( I used 18.2.0 version )</h>
+<h>• JQuery ( I used 3.6.1 version )</h>
 • Node JS (I used 18.12.1 version)
 • npm (8.19.2)
 • express (4.18.2)
